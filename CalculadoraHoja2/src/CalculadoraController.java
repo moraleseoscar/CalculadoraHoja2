@@ -54,34 +54,42 @@ public class CalculadoraController<E> implements Stack, ICalculadora {
 		input = input.replaceAll(" ","");
 		for(String ch: input.split("")) {
 			System.out.println(ch);
-			switch(ch){
-			case "+":
-				operandoA = Double.parseDouble(pop());
-				operandoB = Double.parseDouble(pop());
-				resultado = operandoA + operandoB;
-				push(resultado.toString());
-				break;
-			case "-":
-				operandoA = Double.parseDouble(pop());
-				operandoB = Double.parseDouble(pop());
-				resultado = operandoA - operandoB;
-				push(resultado.toString());
-				break;
-			case "*":
-				operandoA = Double.parseDouble(pop());
-				operandoB = Double.parseDouble(pop());
-				resultado = operandoA * operandoB;
-				push(resultado.toString());
-				break;
-			case "/":
-				operandoA = Double.parseDouble(pop());
-				operandoB = Double.parseDouble(pop());
-				resultado = operandoA / operandoB;
-				push(resultado.toString());
-				break;
-			default:
-				push(ch);
-			}
+			try {
+				switch(ch){
+				case "+":
+					operandoA = Double.parseDouble(pop());
+					operandoB = Double.parseDouble(pop());
+					resultado = operandoA + operandoB;
+					push(resultado.toString());
+					break;
+				case "-":
+					operandoA = Double.parseDouble(pop());
+					operandoB = Double.parseDouble(pop());
+					resultado = operandoA - operandoB;
+					push(resultado.toString());
+					break;
+				case "*":
+					operandoA = Double.parseDouble(pop());
+					operandoB = Double.parseDouble(pop());
+					resultado = operandoA * operandoB;
+					push(resultado.toString());
+					break;
+				case "/":
+					operandoA = Double.parseDouble(pop());
+					operandoB = Double.parseDouble(pop());
+					if(operandoB == 0) {
+						resultado = 0.0;
+					}
+					resultado = operandoA / operandoB;
+					push(resultado.toString());
+					break;
+				default:
+					try {
+						Double test = Double.parseDouble(ch);
+						push(ch);
+					}catch(Exception e) {}
+				}
+			}catch(Exception NoSuchElementException) {}
 			System.out.print(lista);
 		}
 		return resultado;

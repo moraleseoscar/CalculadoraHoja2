@@ -15,7 +15,7 @@ public class Main {
         CalculadoraController c = new CalculadoraController();
 
         String postfix = c.leerDocumento();
-        System.out.println(c.resolver(postfix));
+        System.out.println("Resultado: " + c.resolver(postfix));
         
 	}
 
