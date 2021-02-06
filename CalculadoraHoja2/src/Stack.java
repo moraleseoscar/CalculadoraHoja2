@@ -1,6 +1,6 @@
 /**
  * @author Oscar Estrada 20565
- *
+ * ADT de genericos.
  */
 
 public interface Stack<E> {
@@ -10,7 +10,7 @@ public interface Stack<E> {
    
    public E pop();
    // Pre-condicion: Que la pila no se encuentre vacia
-   // Post-condicion: El item se remueve de la pila y la función retorna dicho valor.
+   // Post-condicion: El item se remueve de la pila y la funciï¿½n retorna dicho valor.
 
    public E peek();
    // Pre-condicion: Que la pila no se encuentre vacia

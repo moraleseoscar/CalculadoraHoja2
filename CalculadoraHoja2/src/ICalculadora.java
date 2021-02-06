@@ -1,5 +1,6 @@
 /**
  * @author Oscar Estrada 20565
+ * ADT de pila
  */
 interface ICalculadora{
     public Double resolver(String input);
